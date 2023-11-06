@@ -1,36 +1,38 @@
-const users = require ("../DataBase/users")
+const CustomError = require('../errors/customError')
+const User = require ("../DataBase/users")
 
-function getAllUsers (req,res){
+async function getAllUsers (req,res,next){
     try {
+        const users = await User.find();
         res.json(users)
     } catch (e){
-        res.status(400).json(e.message || 'Unknown Error')
+        next(e)
     }
 
 }
 
-function createUser (req,res){
+async function createUser (req,res,next){
     try {
         console.log(req.body)
-        res.status(201).json( 'User was created')
+        const users = await User.create(req.body)
+        res.status(201).json(users)
     } catch (e){
-        res.status(400).json(e.message || 'Unknown Error')
+        next(e)
     }
 }
 
-function deleteUser (req,res){
+async function deleteUser (req,res,next){
     try {
-        users.push({
-            name: "Test",
-            age: Math.random() * 100
-        })
+        const {userId = ''} = req.params
+
+        const users = await User.deleteOne({_id :userId});
         res.status(201).json('User was created')
     }   catch (e){
-        res.status(400).json(e.message || 'Unknown Error')
+        next(e)
     }
 }
 
-function updateUser (req,res){
+async function updateUser (req,res,next){
     try {
         users.push({
             name: "Test",
@@ -38,30 +40,23 @@ function updateUser (req,res){
         })
         res.status(201).json('User was created')
     } catch (e){
-        res.status(400).json(e.message || 'Unknown Error')}
+        next(e)}
 }
 
-function getById (req,res){
+async function getById (req,res,next){
     try {
         console.log(req.query)
+        const {userId = ''} = req.params
 
-        const userIndex = +req.params.userId;
+        const users = await User.findById(userId);
 
-        if (isNaN(userIndex) || userIndex < 0) {
-            res.status(400).json('Please enter valid id')
-            return;
-        }
-
-
-        const user = users[userIndex];
-        if (!user) {
-            res.status(404).json(`User with Id ${userIndex} is not found`)
-            return;
+        if (!users) {
+            throw new CustomError(`User with Id ${userId} is not found`,404)
         }
 
         res.json(users)
     } catch (e){
-        res.status(400).json(e.message || 'Unknown Error')}
+        next(e)}
 }
 
 module.exports = {

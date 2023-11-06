@@ -1,12 +1,29 @@
+const {Schema,model}= require ('mongoose')
 
+const UserSchema = new Schema({
 
-module.exports = [
-    {name:'Artem'},
-    {name:'Diana'},
-    {name:'Bodia'},
-    {name:'Dima'},
-    {name:'Katya'},
-    {name:'Anna'},
-    {name:'Oleg'},
-    {name:'Sasha'},
-]
+    name:{
+        type: String,
+        require: true,
+        trim: true
+    },
+
+    age:{
+        type: Number,
+        require: true
+    },
+
+    email:{
+        type: String,
+        require: true,
+        unique:true,
+        lowercase: true
+    },
+
+    password: {
+        type: String,
+        require: true,
+    }
+},{timestamps:true})
+
+module.exports = model('users', UserSchema)

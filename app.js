@@ -15,14 +15,14 @@ app.use ('*',(req,res)=>{
     res.status(404).json('Rout not found')
 })
 
-// app.use((err,req,res,next)=>{
-//     res
-//         .status(err.status || 500)
-//         .json({
-//             error:err.message || 'Unknow error',
-//             code : err.status || 500
-//         })
-// })
+app.use((err,req,res,next)=>{
+    res
+        .status(err.status || 500)
+        .json({
+            error:err.message || 'Unknow error',
+            code : err.status || 500
+        })
+})
 
 app.listen(5000, ()=>{
     console.log('Server listen on port 5000')

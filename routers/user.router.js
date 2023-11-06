@@ -1,10 +1,11 @@
 const usersRouter = require('express').Router()
 
 const usersControl = require("../controles/user.controler");
+const usersMiddlewar = require("../middlewares/user.middlewar");
 
 
 
-usersRouter.post('/',usersControl.createUser)
+usersRouter.post('/',usersMiddlewar.checkOnUserCreate,usersControl.createUser)
 usersRouter.delete('/:usersId',usersControl.deleteUser)
 usersRouter.put('/:usersId',usersControl.updateUser)
 usersRouter.get ('/',usersControl.getAllUsers)
