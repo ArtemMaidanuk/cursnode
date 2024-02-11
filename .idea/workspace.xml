@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4f58cd11-2c8a-48c6-8b54-4f1f772477a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/confix/constants.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validators/user.validator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/user.middlewar.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/user.middlewar.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +46,8 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   },
   &quot;keyToStringList&quot;: {
     &quot;GitStage.ChangesTree.GroupingKeys&quot;: [
@@ -53,6 +57,38 @@
     ]
   }
 }</component>
+  <component name="RunManager">
+    <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
+      <option name="appName" />
+      <option name="appServicePlanName" />
+      <option name="appServicePlanResourceGroup" />
+      <option name="appSettingsKey" value="6d8be0e1-cdd1-45f6-b68e-7b1b82e2222e" />
+      <option name="artifact" />
+      <option name="debugOptions" />
+      <option name="deployment" />
+      <option name="deploymentStagingDirectoryPath" />
+      <option name="funcPath" />
+      <option name="functionHostArguments" />
+      <option name="hostJsonPath" />
+      <option name="insightsName" />
+      <option name="instrumentationKey" />
+      <option name="javaVersion" />
+      <option name="localSettingsJsonPath" />
+      <option name="moduleName" />
+      <option name="os" />
+      <option name="pricingTier" />
+      <option name="providerMap">
+        <map />
+      </option>
+      <option name="region" />
+      <option name="resourceGroup" />
+      <option name="stagingFolder" />
+      <option name="subscription" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -64,7 +100,14 @@
       <workItem from="1699218216978" duration="560000" />
       <workItem from="1699219815595" duration="25000" />
       <workItem from="1699224000551" duration="651000" />
-      <workItem from="1699259268505" duration="3488000" />
+      <workItem from="1699259268505" duration="3809000" />
+      <workItem from="1699286130088" duration="1503000" />
+      <workItem from="1701874753580" duration="1085000" />
+      <workItem from="1702654217593" duration="4243000" />
+      <workItem from="1705744029114" duration="120000" />
+      <workItem from="1706447580921" duration="195000" />
+      <workItem from="1707675336769" duration="358000" />
+      <workItem from="1707675927976" duration="3719000" />
     </task>
     <task id="LOCAL-00001" summary="lesson1">
       <created>1699218456097</created>
@@ -80,7 +123,28 @@
       <option name="project" value="LOCAL" />
       <updated>1699224396199</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="mongoose">
+      <created>1699262897163</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1699262897163</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lesson4">
+      <created>1699263144607</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1699263144607</updated>
+    </task>
+    <task id="LOCAL-00005" summary="hash,compare">
+      <created>1707681470330</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1707681470330</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +203,8 @@
     <MESSAGE value="lesson1" />
     <MESSAGE value="controler" />
     <MESSAGE value="mongoose" />
-    <option name="LAST_COMMIT_MESSAGE" value="mongoose" />
+    <MESSAGE value="lesson4" />
+    <MESSAGE value="hash,compare" />
+    <option name="LAST_COMMIT_MESSAGE" value="hash,compare" />
   </component>
 </project>

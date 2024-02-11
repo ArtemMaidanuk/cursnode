@@ -5,7 +5,8 @@ const usersMiddlewar = require("../middlewares/user.middlewar");
 
 
 
-usersRouter.post('/',usersMiddlewar.checkOnUserCreate,usersControl.createUser)
+
+usersRouter.post('/',usersMiddlewar.checkOnUserCreate,usersMiddlewar.isEmailRegistered,usersControl.createUser)
 usersRouter.delete('/:usersId',usersControl.deleteUser)
 usersRouter.put('/:usersId',usersControl.updateUser)
 usersRouter.get ('/',usersControl.getAllUsers)

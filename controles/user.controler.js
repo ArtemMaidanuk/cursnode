@@ -1,5 +1,6 @@
 const CustomError = require('../errors/customError')
 const User = require ("../DataBase/users")
+const {hashPassword} = require("../servises/password.servise");
 
 async function getAllUsers (req,res,next){
     try {
@@ -13,8 +14,10 @@ async function getAllUsers (req,res,next){
 
 async function createUser (req,res,next){
     try {
-        console.log(req.body)
-        const users = await User.create(req.body)
+        const hashedPassword = await hashPassword(req.body.password)
+
+        const users = await User.create( {...req.body, password: hashedPassword})
+
         res.status(201).json(users)
     } catch (e){
         next(e)

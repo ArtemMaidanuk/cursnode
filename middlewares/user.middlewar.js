@@ -1,20 +1,37 @@
 const {response} = require("express");
 const CustomError = require('../errors/customError')
+const userValidator = require('../validators/user.validator')
+const User = require('../DataBase/users')
+
 module.exports ={
     checkOnUserCreate:(req,res,next) =>{
 try{
-     const{email='',name='',age=0,password=''} =req.body
+    const {error,value} = userValidator.NewUserValidator.validate(req.body)
 
-    if (!email || !name || !password) {
-        throw new CustomError('Some is filed is missing',400)
+    if(error){
+        throw new CustomError(error.details[0].message)
     }
 
-    if (password.length<8) {
-        throw new CustomError('Shot password',400)
-    }
     next()
 }catch (e){
     next(e)
 }
+},
+
+isEmailRegistered : async (req,res,next)=>{
+        try {
+           const {email} = req.body;
+
+            const userByEmail = await User.findOne({email});
+
+            if (userByEmail) {
+                throw new CustomError('User with email was registered',409)
+            }
+            next();
+        } catch (e){
+            next(e)
+        }
+
+
 }
 }
